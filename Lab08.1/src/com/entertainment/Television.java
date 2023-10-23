@@ -33,6 +33,12 @@ public class Television {
     private int volume;
     private DisplayType display = DisplayType.LED;
 
+    //Television HAS-A Tuner [Television] -> [Tuner]
+    private Tuner tuner = new Tuner(); //instantiated internally, not exposed (no get/set)
+
+
+
+
     // CONSTRUCTORS - special methods that get called when the client says "new"
     public Television() {
         instanceCount++;
@@ -64,6 +70,14 @@ public class Television {
     }
 
     // ACCESSOR METHODS - these provide "controlled access" to the (private) fields
+    public void changeChannel(String channel){
+        tuner.setChannel(channel);
+    }
+
+    public String getCurrentChannel(){
+        return tuner.getChannel(); //delegate to Tuner
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -121,6 +135,7 @@ public class Television {
         return "com.entertainment.Television" +
                 ": brand=" + getBrand() +
                 ", volume=" + getVolume() +
-                ", display=" + getDisplay();
+                ", display=" + getDisplay() +
+                ", channel=" + getCurrentChannel();
     }
 }

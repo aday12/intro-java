@@ -16,8 +16,9 @@ class TelevisionClient {
     public static void main(String[] args) {
         Television tv = new Television("Samsung", 65, DisplayType.LED);
         System.out.println(tv);
-        
-        // TODO: change the channel
+
+        //change channel
+        tv.changeChannel("The Weather Channel");
         
         System.out.println(tv);
     }
