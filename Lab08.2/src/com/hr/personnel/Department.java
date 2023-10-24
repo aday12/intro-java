@@ -26,10 +26,11 @@ public class Department {
     // fields
     private String name;
     private String location;
-    private Employee[] employees = new Employee[100];
+    private final Employee[] employees = new Employee[100];
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
+    //none of the IS-A relationships are mentioned here, ie no hourly employee/salaried employee ctor
     public Department() {
     }
 
