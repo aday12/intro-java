@@ -8,6 +8,7 @@ public class SalariedEmployee extends Employee {
 
     //ctor
     public SalariedEmployee() {
+        //super(); calls super weather typed or not
     }
 
     public SalariedEmployee(String name, LocalDate hireDate) {

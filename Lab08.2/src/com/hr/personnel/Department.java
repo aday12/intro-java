@@ -32,6 +32,7 @@ public class Department {
     // constructors
     //none of the IS-A relationships are mentioned here, ie no hourly employee/salaried employee ctor
     public Department() {
+        //super(); calls super weather typed or not
     }
 
     public Department(String name, String location) {

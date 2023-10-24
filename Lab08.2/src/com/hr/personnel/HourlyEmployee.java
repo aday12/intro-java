@@ -8,6 +8,7 @@ public class HourlyEmployee extends Employee {
     private double hours;
     //ctor
     public HourlyEmployee() {
+        //super(); calls super weather typed or not
     }
 
     public HourlyEmployee(String name, LocalDate hireDate) {
