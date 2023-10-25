@@ -49,8 +49,7 @@ public abstract class Employee
      * we dont have the data to pay them correctly here
      */
     public abstract void pay();
-
-    //actually dont have to use payTaxes()
+    //actually don't have to use payTaxes()
     //because this class is abstract only it's subclasses have to implement the interface
 
     // accessor methods

@@ -66,40 +66,43 @@ public class Department {
         }
     }
 
-    /*
-     * "Forced" vacation
-     */
-    public void takeVacation(){
-        for (int i = 0; i < currentIndex; i++){
-            //if employees[i] is pointing to a SalariedEmployee
-            //downcast reference to a type SalariedEmployee
-           if (employees[i] instanceof SalariedEmployee){
-               //downcast and method call in one line
-           //    ((SalariedEmployee) employees[i]).takeVacation();
+    public void payTaxes() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].payTaxes();
+            System.out.println("Taxes paid via USPS");
+        }
+    }
+    public void takeVacation() {
+        for (int i = 0; i < currentIndex; i++) {
+            // Check if employee is an instance of Salaried employee class
+            if (employees[i] instanceof SalariedEmployee) {
+                ((SalariedEmployee) employees[i]).takeVacation(); // Down cast salaried employee and call takeVacation, If you only call 1 method
+                /* We can also use this method
+                 *
+                 * SalariedEmployee emp = (SalariedEmployee) employees[i];
+                 * emp.takeVacation()
+                 */
 
-               //explicit downcast to new reference 'semp'
-               SalariedEmployee semp = (SalariedEmployee) employees[i];
-               semp.takeVacation();
             }
         }
     }
+    
+    
+        // accessor methods
+        public String getName () {
+            return name;
+        }
 
-    // accessor methods
-    public String getName() {
-        return name;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-
+        public void setCurrentIndex(int currentIndex) {
+            this.currentIndex = currentIndex;
+        }
 }
+

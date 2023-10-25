@@ -10,6 +10,7 @@ public class SalariedEmployee
         extends Employee{
     //field
     private double salary;
+    private static final double STANDARD_DEDUCTION = 10_000;
 
     //ctor
     public SalariedEmployee() {
@@ -39,6 +40,11 @@ public class SalariedEmployee
     public void payTaxes(){
         double taxes = salary * TaxPayer.SALARIED_TAX_RATE;
         System.out.println(getName() + " has paid taxes of " + taxes);
+    }
+
+    @Override
+    public double getStandardDeduction() {
+        return STANDARD_DEDUCTION;
     }
 
     //get&set

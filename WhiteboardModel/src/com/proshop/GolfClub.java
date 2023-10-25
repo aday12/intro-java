@@ -51,6 +51,11 @@ public class GolfClub {
        }
     }
 
+    //TODO: add abstract class and subclasses for types of clubs w/different distances in swingClub()
+    //TODO: Add collection for 18 holes, their distances, & par
+    //TODO: method for calculating the distance remaining on a hole after using swingClub(), if <=0 hole++.
+    //     doesn't allow ball to go beyond hole but also doesn't hold player back too much
+
 
     public BrandName getBrand() {
         return brand;
