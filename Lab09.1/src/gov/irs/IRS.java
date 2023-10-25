@@ -8,6 +8,7 @@
  
 package gov.irs;
 
+//supported types = TaxPayer, Object
 /**
  * The IRS maintains a collection of TaxPayers and collects taxes from them.
  *
@@ -15,7 +16,7 @@ package gov.irs;
  */
 public class IRS {
     // what types of objects can this array contain?
-    private TaxPayer[] payers = new TaxPayer[100];
+    private final TaxPayer[] payers = new TaxPayer[100];
     private int currentIndex = 0;  // for dealing with the array
 
     public void collectTaxes() {
