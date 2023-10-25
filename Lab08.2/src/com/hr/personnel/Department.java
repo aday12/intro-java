@@ -40,7 +40,7 @@ public class Department {
         setLocation(location);
     }
 
-    // business methods
+    // business, action, methods
     public void listEmployees() {
         // Note: we don't use for-each here because we only want to access the array where employees were added.
         // Question: what is in the array for indices where no Employee was added?  null!
@@ -52,6 +52,12 @@ public class Department {
     public void workEmployees() {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].work();
+        }
+    }
+
+    public void payEmployees(){
+        for (int i = 0; i < currentIndex; i++){
+            employees[i].pay();
         }
     }
 
@@ -77,7 +83,5 @@ public class Department {
         this.location = location;
     }
 
-    public String toString() {
-        return "Department: name=" + getName() + ", location=" + getLocation();
-    }
+
 }

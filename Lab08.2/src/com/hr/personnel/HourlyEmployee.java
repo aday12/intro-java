@@ -6,6 +6,7 @@ public class HourlyEmployee extends Employee {
     //fields
     private double rate;
     private double hours;
+
     //ctor
     public HourlyEmployee() {
         //super(); calls super weather typed or not
@@ -19,6 +20,12 @@ public class HourlyEmployee extends Employee {
         this(name, hireDate);
         setRate(rate);
         setHours(hours);
+    }
+
+    //action methods
+    @Override
+    public void pay(){
+        System.out.println(getName() + " is paid hourly " + getRate() * getHours());
     }
 
     //get&set
@@ -39,12 +46,9 @@ public class HourlyEmployee extends Employee {
     }
 
     //toString
-
     @Override
     public String toString() {
-        return "HourlyEmployee: " +
-                "name=" + getName() +
-                ", hireDate=" + getHireDate() +
+        return super.toString() +
                 ", rate=" + getRate() +
                 ", hours=" + getHours();
     }
