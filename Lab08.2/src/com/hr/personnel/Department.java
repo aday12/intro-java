@@ -40,6 +40,11 @@ public class Department {
         setLocation(location);
     }
 
+    // helper method to add an Employee to the array
+    public void addEmployee(Employee emp) {
+        employees[currentIndex++] = emp;
+    }
+
     // business, action, methods
     public void listEmployees() {
         // Note: we don't use for-each here because we only want to access the array where employees were added.
@@ -61,9 +66,22 @@ public class Department {
         }
     }
 
-    // helper method to add an Employee to the array
-    public void addEmployee(Employee emp) {
-        employees[currentIndex++] = emp;
+    /*
+     * "Forced" vacation
+     */
+    public void takeVacation(){
+        for (int i = 0; i < currentIndex; i++){
+            //if employees[i] is pointing to a SalariedEmployee
+            //downcast reference to a type SalariedEmployee
+           if (employees[i] instanceof SalariedEmployee){
+               //downcast and method call in one line
+           //    ((SalariedEmployee) employees[i]).takeVacation();
+
+               //explicit downcast to new reference 'semp'
+               SalariedEmployee semp = (SalariedEmployee) employees[i];
+               semp.takeVacation();
+            }
+        }
     }
 
     // accessor methods
