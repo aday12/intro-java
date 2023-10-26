@@ -1,7 +1,8 @@
 package com.entertainment;
 
 //extending Exception makes this a checked exception
-public class InvalidBrandException extends Exception{
+public class InvalidBrandException
+        extends Exception{
 
     public InvalidBrandException() {
         //calls: super class implicitly

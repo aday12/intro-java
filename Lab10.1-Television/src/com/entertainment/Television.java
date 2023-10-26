@@ -19,7 +19,7 @@ public class Television {
     //statics
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
-    public static final String[] VALID_BRANDS = { "Samsung", "Sony", "LG", "Toshiba"};
+    public static final String[] VALID_BRANDS = { "Samsung", "LG", "Sony", "Toshiba" };
 
     private static int instanceCount = 0;
 
