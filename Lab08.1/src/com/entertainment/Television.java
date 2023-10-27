@@ -44,17 +44,17 @@ public class Television {
         instanceCount++;
     }
 
-    public Television(String brand) {
+    public Television(String brand) throws InvalidBrandException {
         this();             // delegate to no-arg ctor for instance count
         setBrand(brand);
     }
 
-    public Television(String brand, int volume) {
+    public Television(String brand, int volume) throws InvalidBrandException {
         this(brand);        // delegate to other ctor above for brand
         setVolume(volume);  // handle volume myself, by delegating to setter
     }
 
-    public Television(String brand, int volume, DisplayType display) {
+    public Television(String brand, int volume, DisplayType display) throws InvalidBrandException {
         this(brand, volume);
         setDisplay(display);
     }
@@ -82,13 +82,14 @@ public class Television {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        if (isValidBrand(brand)) {
+    public void setBrand(String brand) throws InvalidBrandException {
+        boolean valid = false;
+
+        if(isValidBrand(brand)){
             this.brand = brand;
         }
-        else {
-            String brands = Arrays.toString(VALID_BRANDS);
-            System.out.println("Invalid brand: " + brand + ". Valid brands are " + brands + ".");
+        else{
+            throw new InvalidBrandException("Brand must be one of the following: " + Arrays.toString(VALID_BRANDS));
         }
     }
 

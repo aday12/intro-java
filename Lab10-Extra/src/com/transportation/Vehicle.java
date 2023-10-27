@@ -5,6 +5,10 @@ public abstract class Vehicle {
     private String vin;
 
     // CONSTRUCTORS
+    public Vehicle() {
+
+    }
+
     public Vehicle(String vin) {
         this.vin = vin;
     }
