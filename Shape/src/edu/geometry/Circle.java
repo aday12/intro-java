@@ -1,7 +1,7 @@
 package edu.geometry;
 
 public class Circle
-        extends ShapeAb{
+        implements Shape{
     //fields
     private double radius;
 

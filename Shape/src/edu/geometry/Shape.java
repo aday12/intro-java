@@ -1,24 +1,17 @@
 package edu.geometry;
 
-public class Shape {
+public interface Shape {
     //fields
-    public double area;
 
-    //ctors
-    public Shape(){
+    //ctor
 
-    }
 
-    //methods
-
-    //get & set
-    public double getArea() {
-        return area;
-    }
+    //action methods
+    public abstract double getArea();
 
 //    @Override
+
 //    public String toString() {
-//        return "shapeType=" + getClass().getSimpleName() +
-//                ", area=" + getArea();
+//        return super.toString();
 //    }
 }

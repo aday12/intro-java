@@ -1,7 +1,8 @@
 package edu.geometry;
 
 public class Triangle
-        extends ShapeAb {
+        implements Shape {
+    //TODO: use correct formulas to find height/area
 
     //fileds
     public double side1;
@@ -15,8 +16,6 @@ public class Triangle
         this.angle = angle;
         this.side2 = side2;
     }
-
-    //methods
 
     //get & set
     @Override
