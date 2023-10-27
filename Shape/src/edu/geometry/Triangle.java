@@ -4,11 +4,10 @@ public class Triangle
         extends ShapeAb {
 
     //fileds
-    public static final String shapeType = "Triangle";
     public double side1;
     public double angle;
     public double side2;
-    public static double area;
+    public double area;
 
     //ctor
     public Triangle(double side1, double angle, double side2){
@@ -18,12 +17,20 @@ public class Triangle
     }
 
     //methods
-    @Override
-    public double getArea(){
-      area = .5 * (side1 * side2);
-      return area;
-    }
 
     //get & set
+    @Override
+    public double getArea(){
+        area = .5 * (side1 * side2);
+        return area;
+    }
+    //toString
 
+    @Override
+    public String toString() {
+        return "Triangle side1=" + side1 +
+                ", angle=" + angle +
+                ", side2=" + side2 +
+                ", area=" + getArea();
+    }
 }

@@ -1,29 +1,30 @@
 package edu.geometry;
 
-public class Circle {
+public class Circle
+        extends ShapeAb{
     //fields
-    private final String name;
-    private final double radius;
+    private double radius;
 
     //ctor
+    public Circle(){
 
-    public Circle(String name, double radius) {
-        this.name = name;
-        this.radius = radius;
     }
 
-    public Circle(String name, double radius, double area) {
-
-        this.name = name;
+    public Circle(double radius) {
         this.radius = radius;
     }
 
     //actions methods
-
-    private double findArea(){
-        return (3.14 * Math.pow(radius, 2));
-
+    public double getArea(){
+        return (Math.PI * Math.pow(radius, 2));
     }
 
     //get
+    //toString
+
+    @Override
+    public String toString() {
+        return "Circle radius=" + radius +
+                ", area= " + getArea();
+    }
 }

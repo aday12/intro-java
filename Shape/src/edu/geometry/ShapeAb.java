@@ -9,4 +9,9 @@ public abstract class ShapeAb extends Shape{
 
     //action methods
     public abstract double getArea();
+
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
 }
