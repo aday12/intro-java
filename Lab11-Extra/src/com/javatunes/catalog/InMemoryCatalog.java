@@ -138,16 +138,17 @@ public class InMemoryCatalog implements Catalog {
      * TASK: find the average price of items in the specified genre (MusicCategory).
      */
         public boolean hasGenre(MusicCategory category){
-            return findByCategory(category).size() > 0;
+            //return findByCategory(category).size() > 0;
+            // not as good because it checks more than the minimum needed to answer
 
-//            boolean result = false;
-//
-//            for (MusicItem item : catalogData){
-//                if(item.getMusicCategory().equals(category)){
-//                    result = true;
-//                }
-//            }
-//            return result;
+            boolean result = false;
+
+            for (MusicItem item : catalogData){
+                if(item.getMusicCategory().equals(category)){
+                    result = true;
+                }
+            }
+            return result;
         }
 
     /**
