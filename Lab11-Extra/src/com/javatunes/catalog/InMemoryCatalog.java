@@ -10,6 +10,7 @@ package com.javatunes.catalog;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
@@ -201,13 +202,9 @@ public class InMemoryCatalog implements Catalog {
         return null;
     }
 
-    ;
-
     public Collection<MusicItem> findByKeyword(String keyword) {
         return null;
     }
-
-    ;
 
     public Collection<MusicItem> findByCategory(MusicCategory category) {
         Collection<MusicItem> result = new ArrayList<>();
@@ -220,19 +217,13 @@ public class InMemoryCatalog implements Catalog {
         return result;
     }
 
-    ;
-
     public int size() {
         return catalogData.size();
     }
 
-    ;
-
     public Collection<MusicItem> getAll() {
-        return null;
+        return Collections.unmodifiableCollection(catalogData);
     }
-
-    ;
 
     @Override
     public String toString() {
