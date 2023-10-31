@@ -67,14 +67,20 @@ public class PoemClient {
      * Use a try-with-resources to initialize the stream and auto-close it.
      */
     private static void writePoem() {
-        //Files.writeString(Path.of("haiku.txt"), haiku);
+        String haiku = "Java's language learned, \nSyntax and logic discerned,\nCoding skills are earned";
 
-        try(PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))){
-            String line;
-            writer.println("Java's language learned, \nSyntax and logic discerned,\nCoding skills are earned");
-        }
-        catch (IOException e){
+        try {
+            Files.writeString(Path.of("haiku.txt"), haiku);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+//
+//        try(PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))){
+//            String line;
+//            writer.println("Java's language learned, \nSyntax and logic discerned,\nCoding skills are earned");
+//        }
+//        catch (IOException e){
+//            e.printStackTrace();
+//        }
     }
 }
