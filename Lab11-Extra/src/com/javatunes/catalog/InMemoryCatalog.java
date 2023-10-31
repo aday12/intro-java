@@ -8,10 +8,7 @@
 
 package com.javatunes.catalog;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
 // Your first job is to fulfill the contract that this class has signed.
@@ -182,6 +179,10 @@ public class InMemoryCatalog implements Catalog {
      * is a collection of items in that genre.  If there is a genre that we don't currently
      * sell, that key's associated value should be an empty collection, not null.
      */
+    public Map<MusicCategory,Collection<MusicItem>> result = new HashMap<>();
+
+    // TODO: for each category call another method in this class that returns a Collection<MusicItem> for that category
+    // then put() that category and its collection in the result map
 
 
     public MusicItem findById(Long id) {
