@@ -9,6 +9,8 @@
 package com.poetry.io;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class PoemClient {
 
@@ -17,7 +19,7 @@ public class PoemClient {
      */
     public static void main(String[] args) {
         readPoem();
-        writePoem();
+        // writePoem();
     }
 
     /**
@@ -33,6 +35,14 @@ public class PoemClient {
      * The try-with-resources below allows you to initialize the stream and auto-close it.
      */
     private static void readPoem() {
+        try {
+            String poem = Files.readString(Path.of("haiku.txt"));
+            System.out.println(poem);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        /*
         try (BufferedReader reader = new BufferedReader(new FileReader("haiku.txt"))) {
             String line;
             while((line = reader.readLine()) != null){ //null means end of file (EOF)
@@ -43,6 +53,7 @@ public class PoemClient {
             e.printStackTrace();
         }
     }
+        */
 
     /**
      * TASK: write a Haiku to file 'haiku.txt'.
@@ -56,6 +67,8 @@ public class PoemClient {
      * Use a try-with-resources to initialize the stream and auto-close it.
      */
     private static void writePoem() {
+        //Files.writeString(Path.of("haiku.txt"), haiku);
+
         try(PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))){
             String line;
             writer.println("Java's language learned, \nSyntax and logic discerned,\nCoding skills are earned");
