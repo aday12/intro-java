@@ -74,7 +74,7 @@ public class PoemClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//
+
 //        try(PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))){
 //            String line;
 //            writer.println("Java's language learned, \nSyntax and logic discerned,\nCoding skills are earned");

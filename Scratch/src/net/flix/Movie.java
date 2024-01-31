@@ -82,10 +82,10 @@ public class Movie {
     //TODO: make so if revenue is null you use %s, else use %,.2f. HINT: If rev = null use %s else use %,.2f
     @Override
     public String toString() {
-        String revFormat = (getRevenue() == null) ? "%s" : "%,.2f";
-        return revFormat;
+//        String revFormat = (getRevenue() == null) ? "%s" : "%,.2f";
+//        return revFormat;
 
-//        return String.format("Movie: title= %s, releaseYear= %s, revenue= " + revFormat +", rating= %s, genre= %s"),
-//         getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre();
+        return String.format("Movie: title= %s, releaseYear= %s, revenue= %s, rating= %s, genre= %s",
+         getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
     }
 }
